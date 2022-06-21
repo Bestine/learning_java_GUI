@@ -12,7 +12,9 @@ public class MyFrame extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(true);
 		this.setVisible(true);
-		this.setSize(3840, 2160);
+		this.setSize(420, 420);
+		this.getContentPane().setBackground(Color.BLUE);
+		
 	}
 
 }
