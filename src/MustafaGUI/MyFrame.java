@@ -11,9 +11,11 @@ public class MyFrame extends JFrame{
 	MyFrame(){
 		ImageIcon image = new ImageIcon("images/street_analyst.jpeg");
 		
+		
 		JLabel label = new JLabel();
-		label.setText("Mustafa, do you even code?");
+		label.setText("Mustafa");
 		label.setIcon(image);
+		label.setBounds(0, 0, 80, 80);
 		
 		
 		JFrame frame =  new JFrame();
