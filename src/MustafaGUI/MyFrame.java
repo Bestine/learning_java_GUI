@@ -13,9 +13,11 @@ public class MyFrame extends JFrame{
 		
 		
 		JLabel label = new JLabel();
-		label.setText("Mustafa");
+		label.setText("Mustafa, the street_analyst");
 		label.setIcon(image);
 		label.setBounds(0, 0, 80, 80);
+		label.setHorizontalTextPosition(JLabel.RIGHT);
+		label.setVerticalTextPosition(JLabel.TOP);
 		
 		
 		JFrame frame =  new JFrame();
