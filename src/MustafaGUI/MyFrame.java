@@ -1,47 +1,25 @@
 package MustafaGUI;
 
 import java.awt.Color;
-import java.awt.Font;
 
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.border.Border;
+import javax.swing.JPanel;
 
 public class MyFrame extends JFrame{
 	
 	JFrame frame =  new JFrame();
 	
 	MyFrame(){
-		ImageIcon image = new ImageIcon("images/street_analyst.jpeg");
-		Border border = BorderFactory.createLineBorder(Color.green, 3);
-		
-		JLabel label = new JLabel();
-		label.setText("Mustafa, the street_analyst");
-		label.setIcon(image);
-		label.setHorizontalTextPosition(JLabel.CENTER);
-		label.setVerticalTextPosition(JLabel.TOP);
-		label.setForeground(Color.GREEN);
-		label.setFont(new Font("MV Boli", Font.PLAIN, 20));
-		label.setBackground(Color.BLACK);
-		label.setOpaque(true);
-		label.setIconTextGap(0);
-		label.setBorder(border);
-		label.setVerticalAlignment(JLabel.CENTER);
-		label.setHorizontalAlignment(JLabel.CENTER);		
-//		label.setBounds(100, 100, 300, 250);
+		JPanel redPanel = new JPanel();
+		redPanel.setBounds(0, 0, 250, 250);
+		redPanel.setBackground(Color.RED);
 		
 		this.setTitle("MustafaGUI");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setResizable(true);
-//		this.setLayout(null);
+		this.setSize(750, 750);
 		this.setVisible(true);
-//		this.setSize(420, 420);
-		// add the components 
-		this.add(label);
-		this.pack();
-		
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLayout(null);
+		this.add(redPanel);
 	}
 
 }
