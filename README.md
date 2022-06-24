@@ -6,3 +6,5 @@ The main packages used here are Java Swing and Java awt.
 * JFrame
 ## Day 2
 * JLabel
+## Day 3
+* JPanel
