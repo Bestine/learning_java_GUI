@@ -11,6 +11,8 @@ import javax.swing.border.Border;
 
 public class MyFrame extends JFrame{
 	
+	JFrame frame =  new JFrame();
+	
 	MyFrame(){
 		ImageIcon image = new ImageIcon("images/street_analyst.jpeg");
 		Border border = BorderFactory.createLineBorder(Color.green, 3);
@@ -18,7 +20,6 @@ public class MyFrame extends JFrame{
 		JLabel label = new JLabel();
 		label.setText("Mustafa, the street_analyst");
 		label.setIcon(image);
-		label.setBounds(0, 0, 80, 80);
 		label.setHorizontalTextPosition(JLabel.CENTER);
 		label.setVerticalTextPosition(JLabel.TOP);
 		label.setForeground(Color.GREEN);
@@ -27,17 +28,19 @@ public class MyFrame extends JFrame{
 		label.setOpaque(true);
 		label.setIconTextGap(0);
 		label.setBorder(border);
+		label.setVerticalAlignment(JLabel.CENTER);
+		label.setHorizontalAlignment(JLabel.CENTER);		
+//		label.setBounds(100, 100, 300, 250);
 		
-		
-		JFrame frame =  new JFrame();
 		this.setTitle("MustafaGUI");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(true);
+//		this.setLayout(null);
 		this.setVisible(true);
-		this.setSize(420, 420);
-		
+//		this.setSize(420, 420);
 		// add the components 
 		this.add(label);
+		this.pack();
 		
 	}
 
