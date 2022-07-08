@@ -2,42 +2,40 @@ package MustafaGUI;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class MyFrame extends JFrame{
+public class MyFrame extends JFrame implements ActionListener{
 	
 	JFrame frame =  new JFrame();
+	JButton button;
 	
 	MyFrame(){
-		JLabel label = new JLabel();
-		label.setText("Mustafa");
-		label.setVerticalAlignment(JLabel.BOTTOM);
-		
-		JPanel redPanel = new JPanel();
-		redPanel.setBounds(0, 0, 250, 250);
-		redPanel.setBackground(Color.RED);
-		redPanel.setLayout(new BorderLayout());
-		redPanel.add(label);
-		
-		JPanel bluePanel = new JPanel();
-		bluePanel.setBounds(250, 0, 250, 250);
-		bluePanel.setBackground(Color.BLUE);
-		
-		JPanel greenPanel = new JPanel();
-		greenPanel.setBounds(0, 250, 500, 250);
-		greenPanel.setBackground(Color.GREEN);
+		button = new JButton();
+		button.setBounds(70, 70, 200, 100);
+		button.addActionListener(this);
+		button.setText("Hello Mustafa");
+		button.setFocusable(false);
 		
 		this.setTitle("MustafaGUI");
-		this.setSize(750, 750);
+		this.setSize(350, 350);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null);
-		this.add(redPanel);
-		this.add(bluePanel);
-		this.add(greenPanel);
+		this.add(button);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getSource()==button) {
+			System.out.println("Hello Mustafa");
+		}
 	}
 
 }
