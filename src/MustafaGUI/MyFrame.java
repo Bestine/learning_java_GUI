@@ -21,24 +21,40 @@ public class MyFrame extends JFrame{
 		JPanel panel4 =  new JPanel();
 		JPanel panel5 =  new JPanel();
 		
+		panel5.setLayout(new BorderLayout());
+		
+		// Sub panels
+		JPanel panel6 =  new JPanel();
+		JPanel panel7 =  new JPanel();
+		JPanel panel8 =  new JPanel();
+		JPanel panel9 =  new JPanel();
+		JPanel panel10 =  new JPanel();
+		
 		
 		panel1.setPreferredSize(new Dimension(100, 100));
 		panel2.setPreferredSize(new Dimension(100, 100));
 		panel3.setPreferredSize(new Dimension(100, 100));
 		panel4.setPreferredSize(new Dimension(100, 100));
 		panel5.setPreferredSize(new Dimension(100, 100));
+		//Sub panels
+		panel6.setPreferredSize(new Dimension(50, 50));
+		panel7.setPreferredSize(new Dimension(50, 50));
+		panel8.setPreferredSize(new Dimension(50, 50));
+		panel9.setPreferredSize(new Dimension(50, 50));
+		panel10.setPreferredSize(new Dimension(50, 50));
 		
 		panel1.setBackground(Color.black);
 		panel2.setBackground(Color.green);
 		panel3.setBackground(Color.red);
 		panel4.setBackground(Color.blue);
 		panel5.setBackground(Color.yellow);
+		//Subpanels
+		panel6.setBackground(Color.white);
+		panel7.setBackground(Color.gray);
+		panel8.setBackground(Color.pink);
+		panel9.setBackground(Color.magenta);
+		panel10.setBackground(Color.cyan);
 		
-		panel1.setVisible(true);
-		panel2.setVisible(true);
-		panel3.setVisible(true);
-		panel4.setVisible(true);
-		panel5.setVisible(true);
 		
 		this.setResizable(true);
 		this.setTitle("Border Layout Frame");
@@ -46,6 +62,13 @@ public class MyFrame extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(500, 500);
 		this.setLayout(new BorderLayout());
+		//Add the subpanels to panel5
+		panel5.add(panel6, BorderLayout.NORTH);
+		panel5.add(panel7, BorderLayout.SOUTH);
+		panel5.add(panel8, BorderLayout.EAST);
+		panel5.add(panel9, BorderLayout.WEST);
+		panel5.add(panel10, BorderLayout.CENTER);
+		
 		//Add the panels to the Frame
 		this.add(panel1, BorderLayout.NORTH);
 		this.add(panel2, BorderLayout.SOUTH);
