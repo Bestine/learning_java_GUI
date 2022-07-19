@@ -1,80 +1,26 @@
 package MustafaGUI;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 public class MyFrame extends JFrame{
 
 	MyFrame(){
-		//create JPanels
-		JPanel panel1 =  new JPanel();
-		JPanel panel2 =  new JPanel();
-		JPanel panel3 =  new JPanel();
-		JPanel panel4 =  new JPanel();
-		JPanel panel5 =  new JPanel();
+		this.add(new JButton("1"));
+		this.add(new JButton("2"));
+		this.add(new JButton("3"));
+		this.add(new JButton("4"));
+		this.add(new JButton("5"));
+		this.add(new JButton("6"));
+		this.add(new JButton("7"));
+		this.add(new JButton("8"));
+		this.add(new JButton("9"));
 		
-		panel5.setLayout(new BorderLayout());
-		
-		// Sub panels
-		JPanel panel6 =  new JPanel();
-		JPanel panel7 =  new JPanel();
-		JPanel panel8 =  new JPanel();
-		JPanel panel9 =  new JPanel();
-		JPanel panel10 =  new JPanel();
-		
-		
-		panel1.setPreferredSize(new Dimension(100, 100));
-		panel2.setPreferredSize(new Dimension(100, 100));
-		panel3.setPreferredSize(new Dimension(100, 100));
-		panel4.setPreferredSize(new Dimension(100, 100));
-		panel5.setPreferredSize(new Dimension(100, 100));
-		//Sub panels
-		panel6.setPreferredSize(new Dimension(50, 50));
-		panel7.setPreferredSize(new Dimension(50, 50));
-		panel8.setPreferredSize(new Dimension(50, 50));
-		panel9.setPreferredSize(new Dimension(50, 50));
-		panel10.setPreferredSize(new Dimension(50, 50));
-		
-		panel1.setBackground(Color.black);
-		panel2.setBackground(Color.green);
-		panel3.setBackground(Color.red);
-		panel4.setBackground(Color.blue);
-		panel5.setBackground(Color.yellow);
-		//Subpanels
-		panel6.setBackground(Color.white);
-		panel7.setBackground(Color.gray);
-		panel8.setBackground(Color.pink);
-		panel9.setBackground(Color.magenta);
-		panel10.setBackground(Color.cyan);
-		
-		
-		this.setResizable(true);
-		this.setTitle("Border Layout Frame");
-		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLayout(new FlowLayout(FlowLayout.TRAILING));
 		this.setSize(500, 500);
-		this.setLayout(new BorderLayout());
-		//Add the subpanels to panel5
-		panel5.add(panel6, BorderLayout.NORTH);
-		panel5.add(panel7, BorderLayout.SOUTH);
-		panel5.add(panel8, BorderLayout.EAST);
-		panel5.add(panel9, BorderLayout.WEST);
-		panel5.add(panel10, BorderLayout.CENTER);
-		
-		//Add the panels to the Frame
-		this.add(panel1, BorderLayout.NORTH);
-		this.add(panel2, BorderLayout.SOUTH);
-		this.add(panel3, BorderLayout.EAST);
-		this.add(panel4, BorderLayout.WEST);
-		this.add(panel5, BorderLayout.CENTER);
-		
+		this.setVisible(true);		
 	}
 }
