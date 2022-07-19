@@ -1,6 +1,7 @@
 package MustafaGUI;
 
-import java.awt.FlowLayout;
+
+import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -18,9 +19,9 @@ public class MyFrame extends JFrame{
 		this.add(new JButton("8"));
 		this.add(new JButton("9"));
 		
+		this.setLayout(new GridLayout(3, 3, 10, 10));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setLayout(new FlowLayout(FlowLayout.TRAILING));
 		this.setSize(500, 500);
-		this.setVisible(true);		
+		this.setVisible(true);
 	}
 }
