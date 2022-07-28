@@ -4,36 +4,56 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
+import javax.swing.JRadioButton;
 
-public class MyFrame extends JFrame implements ActionListener{
-
-	JButton button;
-	JCheckBox checkBox;
+public class MyFrame extends JFrame implements ActionListener{	
+	
+	JRadioButton vegButton;
+	JRadioButton fruitButton;
+	JRadioButton saladButton;
 	
 	MyFrame(){
-		button = new JButton();
-		button.setText("submit");
-		button.addActionListener(this);
+		vegButton = new JRadioButton();
+		vegButton.setText("vegetable");
+		vegButton.addActionListener(this);
 		
-		checkBox = new JCheckBox();
-		checkBox.setText("Are you Mustafa?");
+		fruitButton = new JRadioButton();
+		fruitButton.setText("fruit");
+		fruitButton.addActionListener(this);
+		
+		saladButton = new JRadioButton();
+		saladButton.setText("salad");
+		saladButton.addActionListener(this);
+		
+		ButtonGroup buttonGroup = new ButtonGroup();
+		buttonGroup.add(fruitButton);
+		buttonGroup.add(vegButton);
+		buttonGroup.add(saladButton);
+
+		this.add(fruitButton);
+		this.add(vegButton);
+		this.add(saladButton);
 		
 		this.setLayout(new FlowLayout());
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		this.add(button);
-		this.add(checkBox);
 		this.pack();
 		this.setVisible(true);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==button) {
-			System.out.println(checkBox.isSelected());
-		}	
+		if(e.getSource()==vegButton) {
+			System.out.println("Ordered vegetables");
+		}
+		else if(e.getSource()==fruitButton) {
+			System.out.println("Ordered fruits");
+		}
+		else if(e.getSource()==saladButton) {
+			System.out.println("Ordered salad");
+		}
+			
 	}
 }
