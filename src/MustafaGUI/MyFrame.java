@@ -12,7 +12,7 @@ public class MyFrame extends JFrame implements ActionListener{
 	JComboBox comboBox;
 	
 	MyFrame(){
-		String[] vegetables = {"spinach", "tomato", "cabbage"};
+		Integer[] vegetables = {1997, 25, 2015, 2011};
 
 		comboBox = new JComboBox(vegetables);
 		comboBox.addActionListener(this);
