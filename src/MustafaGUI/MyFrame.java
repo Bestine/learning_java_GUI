@@ -4,8 +4,11 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.File;
 
 import javax.swing.JFrame;
+
+
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 
@@ -31,7 +34,13 @@ public class MyFrame extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==button) {
 			JFileChooser  fileChooser = new JFileChooser();
-			fileChooser.showOpenDialog(null);
+			fileChooser.setCurrentDirectory(new File("."));
+			
+			if(fileChooser.showOpenDialog(null)==JFileChooser.APPROVE_OPTION) {
+				File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
+				System.out.println(file);
+			}
+			
 		}
 			
 	}
