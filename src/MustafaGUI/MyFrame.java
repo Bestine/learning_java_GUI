@@ -3,6 +3,7 @@ package MustafaGUI;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -35,6 +36,14 @@ public class MyFrame extends JFrame implements ActionListener{
 		fileMenu.add(loadItem);
 		fileMenu.add(saveItem);
 		fileMenu.add(exitItem);
+	
+		// Set the required shortcuts
+		fileMenu.setMnemonic(KeyEvent.VK_F); // Alt+F for file
+		editMenu.setMnemonic(KeyEvent.VK_E); // Alt+E for edit
+		helpMenu.setMnemonic(KeyEvent.VK_H); // Alt+H for help
+		loadItem.setMnemonic(KeyEvent.VK_L); // L for Load
+		saveItem.setMnemonic(KeyEvent.VK_S); // S for save
+		exitItem.setMnemonic(KeyEvent.VK_E); // E for Exit
 		
 		menuBar.add(fileMenu);
 		menuBar.add(editMenu);
