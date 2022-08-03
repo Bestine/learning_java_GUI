@@ -1,54 +1,98 @@
 package MustafaGUI;
 
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.io.File;
 
+import java.awt.Color;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JButton;
-import javax.swing.JColorChooser;
-import javax.swing.JFileChooser;
 
 
-public class MyFrame extends JFrame implements ActionListener{	
 
-	JButton button;
+public class MyFrame extends JFrame implements KeyListener{	
+
 	JLabel label;
 	
 	MyFrame(){		
-		this.setLayout(new FlowLayout());
+		this.setLayout(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+		ImageIcon rocket = new ImageIcon("images/rocket.jpeg");
 		
-		button = new JButton();
-		button.setText("Select a color");
-		button.addActionListener(this);
 		
 		label = new JLabel();
-		label.setText("This is the selected color");
-		label.setFont(new Font("MV Boli", Font.BOLD, 50));
+		label.setIcon(rocket);
+		label.setBounds(250, 400, 60, 60);
+		label.setBackground(Color.black);
+		label.setOpaque(true);
 		
-		
-		this.add(button);
+
 		this.add(label);
-		this.pack();
-//		this.setSize(300, 300);
+		this.getContentPane().setBackground(Color.black);
+		this.addKeyListener(this);
+		this.setSize(500, 500);
 		this.setVisible(true);
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
 		
-		if (e.getSource()==button) {
-			JColorChooser colorChooser = new JColorChooser();
-			Color color =colorChooser.showDialog(null, "Pick a color", Color.green);
-			
-			label.setForeground(color);;
+		switch(e.getKeyCode()) {
+		// Move left
+		case 37:
+			label.setLocation(label.getX()-10, label.getY());
+			break;
+		// Move up
+		case 38:
+			label.setLocation(label.getX(), label.getY()-10);
+			break;
+		// Move right
+		case 39:
+			label.setLocation(label.getX()+10, label.getY());
+			break;
+		case 40:
+			label.setLocation(label.getX(), label.getY()+10);
+			break;
 		}
-			
+		
+		
 	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("Released key: " + e.getKeyCode());
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		switch(e.getKeyChar()) {
+		// Move left
+		case 'a':
+			label.setLocation(label.getX()-10, label.getY());
+			break;
+		
+		// Move up
+		case 'w':
+			label.setLocation(label.getX(), label.getY()-10);
+			break;
+		
+		// Move right
+		case 'd':
+			label.setLocation(label.getX()+10, label.getY());
+			break;
+		
+		// Move down
+		case 's':
+			label.setLocation(label.getX(), label.getY()+10);
+			break;
+			
+		}
+	}
+
 }
