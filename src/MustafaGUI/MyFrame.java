@@ -2,8 +2,8 @@ package MustafaGUI;
 
 
 import java.awt.Color;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -11,88 +11,61 @@ import javax.swing.JLabel;
 
 
 
-public class MyFrame extends JFrame implements KeyListener{	
+public class MyFrame extends JFrame implements MouseListener{	
 
 	JLabel label;
 	
 	MyFrame(){		
 		this.setLayout(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	
-		ImageIcon rocket = new ImageIcon("images/rocket.jpeg");
+
 		
 		
 		label = new JLabel();
-		label.setIcon(rocket);
 		label.setBounds(250, 400, 60, 60);
-		label.setBackground(Color.black);
+		label.setBackground(Color.green);
 		label.setOpaque(true);
+		label.addMouseListener(this);
 		
 
 		this.add(label);
 		this.getContentPane().setBackground(Color.black);
-		this.addKeyListener(this);
 		this.setSize(500, 500);
 		this.setVisible(true);
 	}
 
 	@Override
-	public void keyPressed(KeyEvent e) {
+	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
-		switch(e.getKeyCode()) {
-		// Move left
-		case 37:
-			label.setLocation(label.getX()-10, label.getY());
-			break;
-		// Move up
-		case 38:
-			label.setLocation(label.getX(), label.getY()-10);
-			break;
-		// Move right
-		case 39:
-			label.setLocation(label.getX()+10, label.getY());
-			break;
-		case 40:
-			label.setLocation(label.getX(), label.getY()+10);
-			break;
-		}
-		
+		System.out.println("You just clicked label");
+		label.setBackground(Color.red);
 		
 	}
 
 	@Override
-	public void keyReleased(KeyEvent e) {
+	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("Released key: " + e.getKeyCode());
-		
+		System.out.println("You just entered label");
+		label.setBackground(Color.white);
 	}
 
 	@Override
-	public void keyTyped(KeyEvent e) {
+	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		switch(e.getKeyChar()) {
-		// Move left
-		case 'a':
-			label.setLocation(label.getX()-10, label.getY());
-			break;
-		
-		// Move up
-		case 'w':
-			label.setLocation(label.getX(), label.getY()-10);
-			break;
-		
-		// Move right
-		case 'd':
-			label.setLocation(label.getX()+10, label.getY());
-			break;
-		
-		// Move down
-		case 's':
-			label.setLocation(label.getX(), label.getY()+10);
-			break;
-			
-		}
+		System.out.println("You just exited label");
+		label.setBackground(Color.green);
 	}
 
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("You just pressed label");	
+		label.setBackground(Color.blue);
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }
