@@ -66,6 +66,8 @@ public class MyFrame extends JFrame implements MouseListener{
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
+		System.out.println("You just released the mouse");
+		label.setBackground(Color.yellow);
 		
 	}
 }
